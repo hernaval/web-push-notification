@@ -2,9 +2,11 @@ var push = require("web-push")
 
 let res = push.generateVAPIDKeys();
 
+
+
 let validKeys = {
-    publicKey : 'BOVzCX6DMf03XZzbpNGs7yf6Qqry6ymwsJtBojwjcIxsFG38qURmApw_dO3Qy6MOI-zqcYAEUmzverCV3xRzH_Y',
-    privateKey : 'gTS4TXZYzNj0o9p9GHKctyFc80qd6uDByLqXPHRgZag'
+    publicKey : 'BOEIfS6bNIn5fjXBwwDbP2jMJqyGvDfoaGjoEztQ_5UUCJqyt8Y1uTVsf9eSqoK8JYCaGZCenb6tKqTVAiipLX4',
+    privateKey : '5w5qTp4KEEFTUgZvLrm8hM4CU6hr9E8B4LJlXT3B3LE'
 }
 
 push.setVapidDetails("mailto:hernavalasco@gmail.com",validKeys.publicKey, validKeys.privateKey)

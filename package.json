@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "convert-vapid-public-key": "^1.0.2",
     "web-push": "^3.4.4"
   }
 }
