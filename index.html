@@ -17,11 +17,24 @@
             let sw = await navigator.serviceWorker.ready;
             let push = await sw.pushManager.subscribe({
                 userVisibleOnly : true,
-                applicationServerKey : "BOEIfS6bNIn5fjXBwwDbP2jMJqyGvDfoaGjoEztQ_5UUCJqyt8Y1uTVsf9eSqoK8JYCaGZCenb6tKqTVAiipLX4"
+                applicationServerKey : convertDataURIToBinary('BOEIfS6bNIn5fjXBwwDbP2jMJqyGvDfoaGjoEztQ_5UUCJqyt8Y1uTVsf9eSqoK8JYCaGZCenb6tKqTVAiipLX4')
             })
 
             console.log(JSON.stringify(push))
         }
+
+        function convertDataURIToBinary(dataURI) {
+  var base64Index = dataURI.indexOf(BASE64_MARKER) + BASE64_MARKER.length;
+  var base64 = dataURI.substring(base64Index);
+  var raw = window.atob(base64);
+  var rawLength = raw.length;
+  var array = new Uint8Array(new ArrayBuffer(rawLength));
+
+  for(i = 0; i < rawLength; i++) {
+    array[i] = raw.charCodeAt(i);
+  }
+  return array;
+}
 
     </script>
 </body>
