@@ -1,6 +1,6 @@
 self.addEventListener('push', function(e) {
     var options = {
-      body: 'This notification was generated from a push!',
+      body: 'Les nouvelles données sont synchronisées depuis votre application',
       icon: 'images/example.png',
       vibrate: [100, 50, 100],
       data: {
@@ -8,14 +8,14 @@ self.addEventListener('push', function(e) {
         primaryKey: '2'
       },
       actions: [
-        {action: 'explore', title: 'Explore this new world',
+        {action: 'explore', title: 'Voir les données',
           icon: 'images/checkmark.png'},
-        {action: 'close', title: 'Close',
+        {action: 'close', title: 'Ignorer',
           icon: 'images/xmark.png'},
       ]
     };
     e.waitUntil(
-      self.registration.showNotification('Hello world!', options)
+      self.registration.showNotification('Synchronisation', options)
     );
   });
 
@@ -24,8 +24,11 @@ self.addEventListener('push', function(e) {
       var primaryKey = notification.data.primaryKey
       var action = e.action
 
-      if(action == 'explore'){
-          clients.openWindow("https://idelia.co")
+      if(action == 'close'){
+          
           notification.close()
+      }else{
+        clients.openWindow('http://idelia.co');
+        notification.close()
       }
   })
