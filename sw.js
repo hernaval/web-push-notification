@@ -18,3 +18,14 @@ self.addEventListener('push', function(e) {
       self.registration.showNotification('Hello world!', options)
     );
   });
+
+  self.addEventListener("notificationclick",function(e){
+      var notification = e.notification
+      var primaryKey = notification.data.primaryKey
+      var action = e.action
+
+      if(action == 'explore'){
+          clients.openWindow("https://idelia.co")
+          notification.close()
+      }
+  })
