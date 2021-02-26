@@ -11,7 +11,6 @@ let validKeys = {
 
  push.setVapidDetails("mailto:hernavalasco@gmail.com",validKeys.publicKey, validKeys.privateKey)
 
-let sub ={"endpoint":"https://fcm.googleapis.com/fcm/send/fSMVXTmSMz4:APA91bFcAGez4hx6fLbYESfBwmI54pWKjTJ4zJlsJaDNaxtlSVVgsro_5TMqAYkz_Gjk0k4dignkpbytOKZFl0xzxPsWVpyR4_euzQmhnScKu46E6klxEk9uS6wBunhwEjkrNwAbgLjZ","expirationTime":null,"keys":{"p256dh":"BHNeHGGPRssFmcdVVY38vb2exVjjNpfqH1IAhtXFAryrR6ecYHUrIU5FT9r5Pn9kozc5UiIyrYud35KZSPUqgEY","auth":"2hRytTuKQR08vfpWtrlMaA"}}
-    
+let sub ={"endpoint":"https://fcm.googleapis.com/fcm/send/cDjZmU-JTl0:APA91bFZq_owqJLtWvYJCC-icXJ6Ue3YRRGag2nASeRP9x-ijTDM_K4Bbuj3QLn15cvp4dtxya9zh-AUFePEEKlHdH7VlKIXe_aRktQdjXimPsFLpUvqVSaAHio3Sp0R4DdxEmwJLtup","expirationTime":null,"keys":{"p256dh":"BBiwNv7ZPLtfwUDHQMpajF_1s3xt_LPQVwClDfpf92MwCmJjC2pW40_UQ9m4oOCRIn6MkRNCXv_DrqYN_DdIxyM","auth":"Pwb2Za9bHBiSXoeCoUQXEA"}}
 
  push.sendNotification(sub, "test message")
