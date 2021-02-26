@@ -28,6 +28,7 @@ self.addEventListener('push', function(e) {
           
           notification.close()
       }else{
+      
         clients.openWindow('http://idelia.co');
         notification.close()
       }

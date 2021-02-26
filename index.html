@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "9087aa0f-f62a-4a33-99e6-1ce9dcb592af",
+    });
+  });
+</script>
 </head>
 <body>
     <button onclick="subscribe()">Subscribe</button>
     <script>
-        addEventListener("load",async() =>{
+        /*addEventListener("load",async() =>{
             let sw = await  navigator.serviceWorker.register("./sw.js")
             console.log(sw)
         })
@@ -21,7 +30,7 @@
             })
 
             console.log(JSON.stringify(push))
-        }
+        } */
 
 
     </script>
