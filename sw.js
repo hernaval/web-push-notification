@@ -1,6 +1,6 @@
 self.addEventListener('push', function(e) {
     var options = {
-      body: 'Les nouvelles données sont synchronisées depuis votre application',
+      body: 'Vous avez de nouvelles commandes en attente',
       icon: 'images/example.png',
       vibrate: [100, 50, 100],
       data: {
@@ -8,7 +8,7 @@ self.addEventListener('push', function(e) {
         primaryKey: '2'
       },
       actions: [
-        {action: 'explore', title: 'Voir les données',
+        {action: 'explore', title: 'Voir les commandes',
           icon: 'images/checkmark.png'},
         {action: 'close', title: 'Ignorer',
           icon: 'images/xmark.png'},
@@ -28,8 +28,8 @@ self.addEventListener('push', function(e) {
           
           notification.close()
       }else{
-      
-        clients.openWindow('http://idelia.co');
+        let idPresta = localStorage.getItem("idPresta")
+        clients.openWindow('https://pizzareunion.co/prestataire/index.php?Num_prestataire='+idPresta);
         notification.close()
       }
   })
